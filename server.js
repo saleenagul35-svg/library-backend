@@ -22,7 +22,9 @@ app.use(cors({
     credentials:true
 }))
 
-connectDB();
+connectDB().then(() => {
+    console.log("DB connected, server ready")
+})
 app.use("/api",bookRoute)
 app.use("/api",adminRoute)
 app.use("/api", userRoute)
