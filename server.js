@@ -18,6 +18,7 @@ app.use(express.json())
 app.use(cookieParser())
 app.use(cors({
     origin:"http://localhost:3000",
+    origin:"https://library-management-system-psi-six.vercel.app",
     credentials:true
 }))
 
