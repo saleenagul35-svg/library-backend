@@ -1,0 +1,5 @@
+# Enviroment Variables
+.env
+.env.local
+.env.production
+
