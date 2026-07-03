@@ -77,6 +77,11 @@ const adminsignup = async (req, res) => {
 
             })
             await gmailInfo.save()
+            const accessToken = jwt.sign(
+                { id: gmailInfo._id, email: gmailInfo.email, role: "admin" },
+                process.env.JWT_SECRET_KEY,
+                { expiresIn: "2h" }
+            )
             const refreshToken = jwt.sign(
                 { id: gmailInfo._id, email: gmailInfo.email, role: "admin" },
                 process.env.JWT_REFRESH_SECRET_KEY,
